@@ -4,13 +4,10 @@
     "pages/getOpenId/index",
     "pages/getMiniProgramCode/index",
     "pages/createCollection/index",
-    "pages/uploadFile/index",
-    "pages/selectRecord/index",
-    "pages/updateRecord/index",
-    "pages/updateRecordResult/index",
-    "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/sumRecordResult/index",
+    "pages/createSecret/index",
+    "pages/home/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -28,12 +25,8 @@
         "pagePath": "pages/index/index"
       },
       {
-        "text": "附近",
-        "pagePath": "pages/getOpenId/index"
-      },
-      {
         "text": "我的",
-        "pagePath": "pages/getMiniProgramCode/index"
+        "pagePath": "pages/home/index"
       }
     ]
   }

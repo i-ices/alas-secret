@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-<view class="header" style="background-image: url('../../images/banner.gif')">
+<view class="header">
   <view class="title">唉秘</view>
 
   <view class="top_tip">属于你的暗语</view>
@@ -27,7 +27,4 @@
   </view>
 
   <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
-
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
-
 </view>

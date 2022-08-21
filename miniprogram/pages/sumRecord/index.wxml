@@ -17,5 +17,4 @@
   </view>
   <view class="button" bindtap="sumRecord">聚合记录</view>
   <view class="tip">在”资源管理器>cloudfunctions>quickstartFunctions>sumRecord>index.js“找到聚合记录函数，体验该能力</view>
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
 </view>

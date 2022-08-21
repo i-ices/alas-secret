@@ -11,11 +11,11 @@ Page({
             showItem: false,
             item: [{
                 title: '普通加密',
-                page: 'getOpenId'
-                },
+                page: 'createSecret'
+            },
                 {
                     title: '二级加密',
-                    page: 'getMiniProgramCode'
+                    page: 'createSecret'
                 },
             ]
         }, {
@@ -24,30 +24,11 @@ Page({
             showItem: false,
             item: [{
                 title: '普通解密',
-                page: 'createCollection'
+                page: 'createSecret'
             }, {
                 title: '二级解密',
-                page: 'updateRecord'
-            }, {
-                title: '查询记录',
-                page: 'selectRecord'
-            }, {
-                title: '聚合操作',
-                page: 'sumRecord'
+                page: 'createSecret'
             }]
-        }, {
-            title: '帮助文档',
-            tip: '',
-            showItem: false,
-            item: [{
-                title: '普通加密',
-                page: 'uploadFile'
-
-            },{
-                title: '二级加密',
-                page: 'uploadFile'
-            }
-            ]
         }],
         envList,
         selectedEnv: envList[0],
@@ -58,13 +39,10 @@ Page({
         const index = e.currentTarget.dataset.index;
         const powerList = this.data.powerList;
         powerList[index].showItem = !powerList[index].showItem;
-        if (powerList[index].title === '数据库' && !this.data.haveCreateCollection) {
-            this.onClickDatabase(powerList);
-        } else {
-            this.setData({
-                powerList
-            });
-        }
+        this.setData({
+            powerList
+        });
+
     },
 
     onChangeShowEnvChoose() {
@@ -97,37 +75,6 @@ Page({
     jumpPage(e) {
         wx.navigateTo({
             url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
-        });
-    },
-
-    onClickDatabase(powerList) {
-        wx.showLoading({
-            title: '',
-        });
-        wx.cloud.callFunction({
-            name: 'quickstartFunctions',
-            config: {
-                env: this.data.selectedEnv.envId
-            },
-            data: {
-                type: 'createCollection'
-            }
-        }).then((resp) => {
-            if (resp.result.success) {
-                this.setData({
-                    haveCreateCollection: true
-                });
-            }
-            this.setData({
-                powerList
-            });
-            wx.hideLoading();
-        }).catch((e) => {
-            console.log(e);
-            this.setData({
-                showUploadTip: true
-            });
-            wx.hideLoading();
         });
     }
 });

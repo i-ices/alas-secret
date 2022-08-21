@@ -9,7 +9,9 @@ page {
 .header{
     width: 100%;
     margin: 0 auto;
-    padding: 54rpx 0 60rpx 0;
+    padding: 84rpx 0 90rpx 0;
+    position: relative;
+    background: url("https://7765-wei-chat-2g5d7plr52aaa3f5-1304945644.tcb.qcloud.la/images/banner.gif?sign=036d3b2f08bd999f8c4f4cf5941e6693&t=1661057303");
     background-size: cover;
 }
 
