@@ -11,13 +11,20 @@ page {
     margin: 0 auto;
     padding: 84rpx 0 90rpx 0;
     position: relative;
-    background: url("https://7765-wei-chat-2g5d7plr52aaa3f5-1304945644.tcb.qcloud.la/images/banner.gif?sign=036d3b2f08bd999f8c4f4cf5941e6693&t=1661057303");
-    background-size: cover;
+    position: relative;
+}
+
+.header image{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .title {
     font-family: PingFang SC;
-    font-weight: 500;
+    font-weight: bold;
     color: #000000;
     font-size: 44rpx;
     margin-bottom: 40rpx;
@@ -25,10 +32,10 @@ page {
 }
 
 .top_tip {
-    font-size: 28rpx;
+    font-size: 30rpx;
     font-family: PingFang SC;
     font-weight: 400;
-    color: #888888;
+    color: #2a2a2a;
     margin-bottom: 28rpx;
     text-align: center;
 }
@@ -98,8 +105,40 @@ page {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+.main{
+    width: 90%;
+}
+
+.fui-item__box {
+    width: 100%;
+    padding: 26rpx 32rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.fui-logo {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 24rpx;
+    display: block;
+}
+
+.fui-descr {
+    width: 100%;
+    padding: 32rpx;
+    font-size: 30rpx;
+    line-height: 52rpx;
+    color: #676767;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+
+
 .environment {
     color: rgba(0, 0, 0, 0.4);
     font-size: 24rpx;
-    margin-top: 25%;
+    bottom: 10rpx;
+    position: absolute;
 }

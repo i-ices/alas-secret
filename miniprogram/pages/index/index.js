@@ -4,45 +4,32 @@ const {envList} = require('../../envList.js');
 
 Page({
     data: {
-        showUploadTip: false,
-        powerList: [{
+        envList,
+        selectedEnv: envList[0],
+        haveCreateCollection: false,
+        items: [{
+            src: '../../images/encryption.png',
             title: '生成暗语',
-            tip: '在这里生成暗语，可以选择是否二级加密',
-            showItem: false,
-            item: [{
+            arr: [{
                 title: '普通加密',
-                page: 'createSecret'
+                page: 'friendsList'
             },
                 {
                     title: '二级加密',
-                    page: 'createSecret'
+                    page: 'friendsList'
                 },
             ]
         }, {
+            src: '../../images/decrypt.png',
             title: '解密暗语',
-            tip: '在这里解密暗语，可以选择是否为二级解密',
-            showItem: false,
-            item: [{
+            arr: [{
                 title: '普通解密',
-                page: 'createSecret'
+                page: 'friendsList'
             }, {
                 title: '二级解密',
-                page: 'createSecret'
+                page: 'friendsList'
             }]
-        }],
-        envList,
-        selectedEnv: envList[0],
-        haveCreateCollection: false
-    },
-
-    onClickPowerInfo(e) {
-        const index = e.currentTarget.dataset.index;
-        const powerList = this.data.powerList;
-        powerList[index].showItem = !powerList[index].showItem;
-        this.setData({
-            powerList
-        });
-
+        }]
     },
 
     onChangeShowEnvChoose() {

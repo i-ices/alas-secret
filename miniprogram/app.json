@@ -7,7 +7,8 @@
     "pages/sumRecord/index",
     "pages/sumRecordResult/index",
     "pages/createSecret/index",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/friendsList/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
