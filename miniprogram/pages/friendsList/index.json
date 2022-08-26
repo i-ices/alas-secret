@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "fui-list": "../firstui/fui-list/fui-list",
+    "fui-list-cell": "../firstui/fui-list-cell/fui-list-cell"
+  }
+}

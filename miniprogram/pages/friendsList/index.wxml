@@ -1,0 +1,15 @@
+<view class="main">
+    <fui-list bottomBorder title="好友列表" size="32" wx:if="{{userInfo !== null}}">
+        <fui-list-cell arrow arrowColor="#90BEC3" class="item" radius="10px" marginBottom="20" wx:key="index" wx:for="{{friendsList}}">
+            <image src="../../images/picture.jpg"></image>
+            <text>用户名</text>
+        </fui-list-cell>
+    </fui-list>
+
+    <fui-list bottomBorder title="好友列表" size="32" wx:if="{{userInfo == null}}">
+        <fui-list-cell arrowColor="#90c3be" class="item" bind:click="onClickLogin" radius="10px" marginBottom="10">
+            <button class="btn" open-type="getUserInfo" bindgetuserinfo="onClickLogin"></button>
+            <text>点我登录</text>
+        </fui-list-cell>
+    </fui-list>
+</view>

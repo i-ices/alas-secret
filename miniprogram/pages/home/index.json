@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "fui-list": "../firstui/fui-list/fui-list",
+    "fui-list-cell": "../firstui/fui-list-cell/fui-list-cell",
+    "fui-dialog": "../firstui/fui-dialog/fui-dialog"
+  },
+  "navigationStyle": "custom"
+}

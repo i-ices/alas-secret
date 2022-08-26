@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="header">
+        <image src="../../images/home-banner.jpg" mode="widthFix"></image>
+        <view class="title" wx:if="{{userInfo == null}}" bindtap="onClickLogin">
+            <button class="btn" open-type="getUserInfo" bindgetuserinfo="onClickLogin"></button>
+            <image src="../../images/user.png"></image>
+            <text>点击登录</text>
+        </view>
+        <view class="title" wx:if="{{userInfo !== null}}">
+            <image src="{{userInfo.avatarUrl}}"></image>
+            <text>{{userInfo.nickName}}</text>
+        </view>
+    </view>
+    <view class="tools">
+        <view>
+            <button  open-type="share" class="btn">转发</button>
+            <image src="../../images/share.png" mode="widthFix"></image>
+            <text>分享好友</text>
+        </view>
+        <view bind:tap="clickReward">
+            <image src="../../images/appreciate.png" mode="widthFix"></image>
+            <text>赞赏唉秘</text>
+        </view>
+        <view>
+            <button open-type="feedback" class="btn"></button>
+            <image src="../../images/opinion.png" mode="widthFix"></image>
+            <text>意见反馈</text>
+        </view>
+    </view>
+    <view class="footer">
+        <fui-list>
+            <fui-list-cell arrow>
+                <image class="picture" src="../../images/management.png"></image>
+                <text>密钥管理</text>
+            </fui-list-cell>
+            <fui-list-cell arrow>
+                <image class="picture" src="../../images/introduction.png"></image>
+                <text>功能介绍</text>
+            </fui-list-cell>
+            <fui-list-cell arrow>
+                <image class="picture" src="../../images/about.png"></image>
+                <text>关于我们</text>
+            </fui-list-cell>
+            <fui-list-cell arrow bind:click="clickExit">
+                <image class="picture" src="../../images/exit.png"></image>
+                <text>退出登录</text>
+            </fui-list-cell>
+        </fui-list>
+    </view>
+    <fui-dialog id="model" show="{{show}}" content="{{'你确定退出登录嘛'}}" maskClosable="{{false}}" bindclick="exitLogin"
+                bindclose="exitClose"></fui-dialog>
+</view>
