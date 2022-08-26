@@ -1,8 +1,6 @@
 {
   "usingComponents": {
-    "fui-collapse": "../firstui/fui-collapse/fui-collapse",
-    "fui-collapse-item": "../firstui/fui-collapse-item/fui-collapse-item",
-    "fui-list": "../firstui/fui-list/fui-list",
     "fui-list-cell": "../firstui/fui-list-cell/fui-list-cell"
-  }
+  },
+  "navigationStyle": "custom"
 }

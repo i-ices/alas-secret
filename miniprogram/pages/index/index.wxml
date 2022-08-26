@@ -1,27 +1,37 @@
 <!--index.wxml-->
 <view class="container">
+    <!--    banner-->
     <view class="header">
-        <image src="../../images/banner.jpg" mode="aspectFill"></image>
-        <view class="title">唉秘</view>
-
-        <view class="top_tip">属于你的暗语</view>
+        <image src="../../images/crop-logo.png" mode="aspectFill"></image>
+        <view>
+            <view class="title">唉秘</view>
+            <view class="top_tip">属于你的暗语</view>
+        </view>
     </view>
+    <!--    概览-->
+    <view class="tips" bind:tap="jumpPageTabBar" data-page="{{'home'}}">
+        <view class="tips-t">
+            <image src="../../images/logo.png" mode="heightFix"></image>
+            <text>用户名</text>
+            <image src="../../images/arrow.svg" class="arrow" mode="heightFix"></image>
+        </view>
+        <view class="tips-b">
+            <view>
+                <text>好友数</text>
+                <text>12</text>
+            </view>
+            <view>
+                <text>密钥数</text>
+                <text>13</text>
+            </view>
+        </view>
+    </view>
+    <!--    主按钮-->
     <view class="main">
-        <fui-collapse accordion bindchange="change">
-            <fui-collapse-item index="{{index}}" wx:for="{{items}}" wx:for-item="power" wx:key="index">
-                <view class="fui-item__box">
-                    <image src="{{power.src}}" class="fui-logo"></image>
-                    <text>{{power.title}}</text>
-                </view>
-                <view slot="content" class="fui-descr" >
-                    <fui-list>
-                        <fui-list-cell arrow wx:for="{{power.arr}}" wx:key="title" bindtap="jumpPage" data-page="{{item.page}}">
-                            <text>{{item.title}}</text>
-                        </fui-list-cell>
-                    </fui-list>
-                </view>
-            </fui-collapse-item>
-        </fui-collapse>
+        <fui-list-cell  bind:click="jumpPage" data-page="{{item.page}}" marginBottom="20" class="item" arrow wx:key="index" wx:for="{{items}}">
+            <image src="{{item.src}}"></image>
+            <text>{{item.title}}</text>
+        </fui-list-cell>
     </view>
 
     <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>

@@ -9,26 +9,12 @@ Page({
         haveCreateCollection: false,
         items: [{
             src: '../../images/encryption.png',
-            title: '生成暗语',
-            arr: [{
-                title: '普通加密',
-                page: 'friendsList'
-            },
-                {
-                    title: '二级加密',
-                    page: 'friendsList'
-                },
-            ]
+            title: '加密',
+            page: 'friendsList'
         }, {
             src: '../../images/decrypt.png',
-            title: '解密暗语',
-            arr: [{
-                title: '普通解密',
-                page: 'friendsList'
-            }, {
-                title: '二级解密',
-                page: 'friendsList'
-            }]
+            title: '解密',
+            page: 'friendsList'
         }]
     },
 
@@ -61,6 +47,12 @@ Page({
 
     jumpPage(e) {
         wx.navigateTo({
+            url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
+        });
+    },
+
+    jumpPageTabBar(e){
+        wx.switchTab({
             url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
         });
     }
